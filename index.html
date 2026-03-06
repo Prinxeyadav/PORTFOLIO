@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prince Kumar | Full Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-content">
+    <div class="arc-reactor-loader">
+      <div class="arc-core"></div>
+      <div class="arc-ring r1"></div>
+      <div class="arc-ring r2"></div>
+      <div class="arc-ring r3"></div>
+    </div>
+    <div class="loader-text">INITIALIZING JARVIS INTERFACE</div>
+    <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+    <div class="loader-status" id="loaderStatus">Connecting to server...</div>
+  </div>
+</div>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- PARTICLES -->
+<canvas id="particles"></canvas>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#hero">
+      <div class="arc-mini"></div>
+      <span>PRINCE<span class="logo-dot">.K</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#hackathons" class="nav-link">Hackathons</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="api-status" id="apiStatus">
+      <span class="api-dot"></span> API ONLINE
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about"      onclick="closeMobile()">About</a>
+  <a href="#skills"     onclick="closeMobile()">Skills</a>
+  <a href="#projects"   onclick="closeMobile()">Projects</a>
+  <a href="#hackathons" onclick="closeMobile()">Hackathons</a>
+  <a href="#contact"    onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- ═══ HERO ═══════════════════════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-scanline"></div>
+  <div class="hero-inner">
+    <!-- TEXT -->
+    <div class="hero-text">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span id="badgeText">LOADING STATUS...</span>
+      </div>
+      <h1 class="hero-name">PRINCE<br><span>KUMAR</span></h1>
+      <div class="hero-role" id="heroRole">⚡ Full Stack Developer</div>
+      <p class="hero-desc">
+        2nd Year B.Tech — <em>Information Technology</em> at Parul University, Vadodara.<br>
+        Building <em>end-to-end digital solutions</em> across Java, Python, Backend, Power BI & Design.<br>
+        <em>ODDO Hackathon 2.0 competitor</em> · DotSlash NIT Surat bound.
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">⚙ VIEW PROJECTS</a>
+        <a href="#contact"  class="btn-ghost">✉ CONTACT ME</a>
+        <a href="/api/projects" target="_blank" class="btn-api">{ } API</a>
+      </div>
+      <!-- LIVE STATS FROM API -->
+      <div class="hero-stats" id="heroStats">
+        <div class="stat"><span class="stat-n" id="statProjects">—</span><span class="stat-l">Projects</span></div>
+        <div class="stat"><span class="stat-n" id="statSkills">—</span><span class="stat-l">Skills</span></div>
+        <div class="stat"><span class="stat-n" id="statHacks">—</span><span class="stat-l">Hackathons</span></div>
+        <div class="stat"><span class="stat-n" id="statVisitors">—</span><span class="stat-l">Visitors</span></div>
+      </div>
+    </div>
+
+    <!-- IRON MAN VISUAL -->
+    <div class="hero-visual">
+      <div class="im-frame">
+        <div class="im-orbit o1"></div>
+        <div class="im-orbit o2"></div>
+        <div class="im-orbit o3"></div>
+        <div class="hud-c tl"></div>
+        <div class="hud-c tr"></div>
+        <div class="hud-c bl"></div>
+        <div class="hud-c br"></div>
+        <div class="im-circle">
+          <div class="im-bg"></div>
+          <!-- Iron Man SVG Illustration -->
+          <svg class="im-svg" viewBox="0 0 300 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Body/Chest -->
+            <ellipse cx="150" cy="260" rx="80" ry="90" fill="#8B1A1A"/>
+            <ellipse cx="150" cy="260" rx="70" ry="80" fill="#B22222"/>
+            <!-- Shoulders -->
+            <ellipse cx="75" cy="200" rx="35" ry="28" fill="#8B1A1A"/>
+            <ellipse cx="225" cy="200" rx="35" ry="28" fill="#8B1A1A"/>
+            <!-- Gold shoulder plates -->
+            <ellipse cx="75" cy="195" rx="28" ry="18" fill="#D4A017"/>
+            <ellipse cx="225" cy="195" rx="28" ry="18" fill="#D4A017"/>
+            <!-- Neck -->
+            <rect x="130" y="155" width="40" height="30" rx="5" fill="#C0392B"/>
+            <!-- Head -->
+            <ellipse cx="150" cy="130" rx="60" ry="70" fill="#C0392B"/>
+            <!-- Helmet face plate -->
+            <ellipse cx="150" cy="130" rx="52" ry="62" fill="#B22222"/>
+            <!-- Eye slits -->
+            <ellipse cx="125" cy="115" rx="22" ry="10" fill="#1a1a1a"/>
+            <ellipse cx="175" cy="115" rx="22" ry="10" fill="#1a1a1a"/>
+            <!-- Eye glow -->
+            <ellipse cx="125" cy="115" rx="18" ry="7" fill="#00EEFF" opacity="0.9"/>
+            <ellipse cx="175" cy="115" rx="18" ry="7" fill="#00EEFF" opacity="0.9"/>
+            <ellipse cx="125" cy="115" rx="12" ry="4" fill="white" opacity="0.8"/>
+            <ellipse cx="175" cy="115" rx="12" ry="4" fill="white" opacity="0.8"/>
+            <!-- Helmet gold line -->
+            <rect x="98" y="108" width="104" height="4" rx="2" fill="#D4A017"/>
+            <!-- Chin -->
+            <rect x="115" y="155" width="70" height="15" rx="5" fill="#8B1A1A"/>
+            <!-- Chest plate panels -->
+            <rect x="110" y="215" width="80" height="60" rx="8" fill="#8B0000"/>
+            <!-- Arc Reactor -->
+            <circle cx="150" cy="245" r="22" fill="#001133"/>
+            <circle cx="150" cy="245" r="18" fill="#002244"/>
+            <circle cx="150" cy="245" r="14" fill="#0044AA"/>
+            <circle cx="150" cy="245" r="9"  fill="#00AAFF"/>
+            <circle cx="150" cy="245" r="5"  fill="#00DDFF"/>
+            <circle cx="150" cy="245" r="3"  fill="white"/>
+            <!-- Arc glow rings -->
+            <circle cx="150" cy="245" r="22" fill="none" stroke="#00DDFF" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="150" cy="245" r="26" fill="none" stroke="#00AAFF" stroke-width="1"   opacity="0.3"/>
+            <!-- Chest gold trim -->
+            <rect x="108" y="213" width="84" height="4" rx="2" fill="#D4A017"/>
+            <rect x="108" y="271" width="84" height="4" rx="2" fill="#D4A017"/>
+            <!-- Abs lines -->
+            <line x1="150" y1="280" x2="150" y2="340" stroke="#8B0000" stroke-width="3"/>
+            <line x1="120" y1="295" x2="180" y2="295" stroke="#8B0000" stroke-width="2"/>
+            <line x1="120" y1="315" x2="180" y2="315" stroke="#8B0000" stroke-width="2"/>
+            <!-- Arms -->
+            <rect x="40"  y="215" width="38" height="100" rx="14" fill="#C0392B"/>
+            <rect x="222" y="215" width="38" height="100" rx="14" fill="#C0392B"/>
+            <!-- Arm gold bands -->
+            <rect x="40"  y="240" width="38" height="8" rx="3" fill="#D4A017"/>
+            <rect x="222" y="240" width="38" height="8" rx="3" fill="#D4A017"/>
+            <rect x="40"  y="290" width="38" height="8" rx="3" fill="#D4A017"/>
+            <rect x="222" y="290" width="38" height="8" rx="3" fill="#D4A017"/>
+            <!-- Repulsor hands -->
+            <circle cx="59"  cy="328" r="15" fill="#8B1A1A"/>
+            <circle cx="241" cy="328" r="15" fill="#8B1A1A"/>
+            <circle cx="59"  cy="328" r="9"  fill="#002244"/>
+            <circle cx="241" cy="328" r="9"  fill="#002244"/>
+            <circle cx="59"  cy="328" r="5"  fill="#00CCFF"/>
+            <circle cx="241" cy="328" r="5"  fill="#00CCFF"/>
+            <circle cx="59"  cy="328" r="2"  fill="white"/>
+            <circle cx="241" cy="328" r="2"  fill="white"/>
+            <!-- Legs top -->
+            <rect x="110" y="340" width="55" height="35" rx="8" fill="#8B1A1A"/>
+            <rect x="170" y="340" width="55" height="35" rx="8" fill="#8B1A1A"/>
+            <!-- Shine overlay -->
+            <ellipse cx="138" cy="100" rx="18" ry="25" fill="white" opacity="0.06"/>
+            <ellipse cx="88"  cy="195" rx="10" ry="14" fill="white" opacity="0.08"/>
+          </svg>
+          <!-- Arc reactor light overlay -->
+          <div class="arc-glow"></div>
+        </div>
+        <!-- HUD data tags -->
+        <div class="hud-tag hud-tag-1">SUIT: MARK L</div>
+        <div class="hud-tag hud-tag-2">POWER: 100%</div>
+        <div class="hud-tag hud-tag-3">STATUS: ACTIVE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ════════════════════════════════════════════════════════════════ -->
+<section id="about">
+  <div class="container">
+    <p class="sec-tag">// SYSTEM PROFILE</p>
+    <h2 class="sec-title">About <span>Me</span></h2>
+    <div class="sec-line"></div>
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <div class="card-top-bar"></div>
+        <div class="avatar-wrap">
+          <div class="avatar">PK</div>
+        </div>
+        <h3 class="about-name">Prince Kumar</h3>
+        <p class="about-uni">Parul University · 2nd Year IT</p>
+        <div class="about-links">
+          <a href="mailto:rajprincekumar99550@gmail.com" class="alink">📧 rajprincekumar99550@gmail.com</a>
+          <a href="tel:+917870496423" class="alink">📞 +91 7870496423</a>
+          <a href="https://www.linkedin.com/in/prince-yadav-a8886a312/" target="_blank" class="alink">🔗 LinkedIn Profile</a>
+          <a href="https://github.com/Prinxeyadav" target="_blank" class="alink">🐙 github.com/Prinxeyadav</a>
+          <span class="alink">📍 Vadodara, Gujarat, India</span>
+        </div>
+        <div class="status-badge">✓ OPEN TO OPPORTUNITIES</div>
+      </div>
+      <div class="about-body reveal">
+        <p>I'm <strong>Prince Kumar</strong>, a passionate 2nd-year <em>B.Tech Information Technology</em> student at Parul University, Vadodara. I build things end-to-end — from backend systems to polished frontends.</p>
+        <p>My tech stack includes <em>Java & Python</em> for backend, <em>HTML5 & CSS3</em> for the web, <em>C</em> for fundamentals, <em>Power BI</em> for data storytelling, and <em>Adobe Photoshop</em> for design — covering the full spectrum of a modern developer.</p>
+        <p>I thrive in competitive environments. Competing in <em>ODDO Hackathon 2.0 (2025)</em> taught me to ship fast, collaborate under pressure, and build real products from scratch. Next up: <em>DotSlash at NIT Surat</em> — 30+ hours of pure engineering intensity.</p>
+        <p>I believe in building like Tony Stark: <em>intelligent, creative, relentless</em>.</p>
+        <div class="info-chips">
+          <div class="chip"><span class="chip-k">Degree</span><span class="chip-v">B.Tech IT</span></div>
+          <div class="chip"><span class="chip-k">Year</span><span class="chip-v">2nd (2023–2027)</span></div>
+          <div class="chip"><span class="chip-k">University</span><span class="chip-v">Parul University</span></div>
+          <div class="chip"><span class="chip-k">Location</span><span class="chip-v">Vadodara, GJ</span></div>
+          <div class="chip"><span class="chip-k">Role</span><span class="chip-v">Full Stack Dev</span></div>
+          <div class="chip"><span class="chip-k">Status</span><span class="chip-v" style="color:#00ff88">Available</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SKILLS ════════════════════════════════════════════════════════════════ -->
+<section id="skills">
+  <div class="container">
+    <p class="sec-tag">// TECHNICAL ARSENAL</p>
+    <h2 class="sec-title">My <span>Skills</span></h2>
+    <div class="sec-line"></div>
+    <div class="skills-grid" id="skillsGrid">
+      <!-- Populated by API -->
+      <div class="loading-msg">⚡ Loading skills from API...</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROJECTS ══════════════════════════════════════════════════════════════ -->
+<section id="projects">
+  <div class="container">
+    <p class="sec-tag">// MISSION LOGS</p>
+    <h2 class="sec-title">Featured <span>Projects</span></h2>
+    <div class="sec-line"></div>
+    <div class="api-banner">
+      <span>⚡ Live data from:</span>
+      <a href="/api/projects" target="_blank"><code>GET /api/projects</code></a>
+    </div>
+    <div class="projects-grid" id="projectsGrid">
+      <div class="loading-msg">⚡ Fetching projects from API...</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HACKATHONS ════════════════════════════════════════════════════════════ -->
+<section id="hackathons">
+  <div class="container">
+    <p class="sec-tag">// COMBAT RECORD</p>
+    <h2 class="sec-title">Hackathon <span>History</span></h2>
+    <div class="sec-line"></div>
+    <div class="api-banner">
+      <span>⚡ Live data from:</span>
+      <a href="/api/hackathons" target="_blank"><code>GET /api/hackathons</code></a>
+    </div>
+    <div class="hack-timeline" id="hackTimeline">
+      <div class="loading-msg">⚡ Loading hackathons from API...</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ API EXPLORER ══════════════════════════════════════════════════════════ -->
+<section id="api">
+  <div class="container">
+    <p class="sec-tag">// BACKEND SHOWCASE</p>
+    <h2 class="sec-title">REST <span>API</span> Explorer</h2>
+    <div class="sec-line"></div>
+    <p class="api-intro">This portfolio is powered by a real Node.js backend. Try the live endpoints below:</p>
+    <div class="api-grid">
+      <div class="api-card reveal" onclick="callApi('/api/health')">
+        <div class="api-method get">GET</div>
+        <code>/api/health</code>
+        <p>Server health check</p>
+        <div class="api-try">▶ TRY</div>
+      </div>
+      <div class="api-card reveal" onclick="callApi('/api/profile')">
+        <div class="api-method get">GET</div>
+        <code>/api/profile</code>
+        <p>Developer profile data</p>
+        <div class="api-try">▶ TRY</div>
+      </div>
+      <div class="api-card reveal" onclick="callApi('/api/projects')">
+        <div class="api-method get">GET</div>
+        <code>/api/projects</code>
+        <p>All portfolio projects</p>
+        <div class="api-try">▶ TRY</div>
+      </div>
+      <div class="api-card reveal" onclick="callApi('/api/skills')">
+        <div class="api-method get">GET</div>
+        <code>/api/skills</code>
+        <p>Technical skills list</p>
+        <div class="api-try">▶ TRY</div>
+      </div>
+      <div class="api-card reveal" onclick="callApi('/api/hackathons')">
+        <div class="api-method get">GET</div>
+        <code>/api/hackathons</code>
+        <p>Hackathon history</p>
+        <div class="api-try">▶ TRY</div>
+      </div>
+      <div class="api-card reveal" onclick="callApi('/api/stats')">
+        <div class="api-method get">GET</div>
+        <code>/api/stats</code>
+        <p>Live visitor stats</p>
+        <div class="api-try">▶ TRY</div>
+      </div>
+    </div>
+    <div class="api-response-box" id="apiResponseBox" style="display:none">
+      <div class="arb-header">
+        <span id="arbEndpoint">Response</span>
+        <button onclick="document.getElementById('apiResponseBox').style.display='none'">✕</button>
+      </div>
+      <pre id="apiResponse"></pre>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══════════════════════════════════════════════════════════════ -->
+<section id="contact">
+  <div class="container">
+    <p class="sec-tag">// OPEN CHANNEL</p>
+    <h2 class="sec-title">Get In <span>Touch</span></h2>
+    <div class="sec-line"></div>
+    <div class="contact-grid">
+      <div class="contact-left reveal">
+        <h3>Let's Build Something Great</h3>
+        <p>Whether you have a project, opportunity, or just want to connect — my comms are always open. Powered by <em>POST /api/contact</em>.</p>
+        <div class="clinks">
+          <a href="mailto:rajprincekumar99550@gmail.com" class="clink">
+            <div class="clink-icon" style="background:rgba(234,67,53,0.15);color:#EA4335">✉</div>
+            <div><div class="clink-k">Email</div><div class="clink-v">rajprincekumar99550@gmail.com</div></div>
+          </a>
+          <a href="tel:+917870496423" class="clink">
+            <div class="clink-icon" style="background:rgba(0,255,136,0.1);color:#00ff88">📞</div>
+            <div><div class="clink-k">Phone</div><div class="clink-v">+91 7870496423</div></div>
+          </a>
+          <a href="https://www.linkedin.com/in/prince-yadav-a8886a312/" target="_blank" class="clink">
+            <div class="clink-icon" style="background:rgba(10,102,194,0.15);color:#0A66C2">in</div>
+            <div><div class="clink-k">LinkedIn</div><div class="clink-v">prince-yadav-a8886a312</div></div>
+          </a>
+          <a href="https://github.com/Prinxeyadav" target="_blank" class="clink">
+            <div class="clink-icon" style="background:rgba(255,255,255,0.08);color:white">⌥</div>
+            <div><div class="clink-k">GitHub</div><div class="clink-v">github.com/Prinxeyadav</div></div>
+          </a>
+        </div>
+      </div>
+      <div class="contact-right reveal">
+        <div class="form-label-top">POST /api/contact</div>
+        <form id="contactForm">
+          <div class="frow">
+            <div class="fg"><label>Name</label><input type="text" id="fName" placeholder="Your name" required></div>
+            <div class="fg"><label>Email</label><input type="email" id="fEmail" placeholder="your@email.com" required></div>
+          </div>
+          <div class="fg"><label>Subject</label><input type="text" id="fSubject" placeholder="Project / Opportunity / Hello"></div>
+          <div class="fg"><label>Message</label><textarea id="fMessage" rows="5" placeholder="Tell me about your project..." required></textarea></div>
+          <button type="submit" class="btn-submit" id="submitBtn">⚡ SEND MESSAGE</button>
+          <div class="form-feedback" id="formFeedback"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><div class="arc-mini sm"></div> PRINCE KUMAR</div>
+    <div class="footer-copy">Full Stack Developer · Parul University · Vadodara 2025</div>
+    <div class="footer-tag">// JARVIS SYSTEM ONLINE — ALL SYSTEMS NOMINAL //</div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
