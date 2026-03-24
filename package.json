@@ -1,1 +1,15 @@
-
+{
+  "name": "prince-kumar-portfolio",
+  "version": "1.0.0",
+  "description": "Full Stack Portfolio — Prince Kumar | Node.js REST API + Iron Man Frontend",
+  "main": "backend/server.js",
+  "scripts": {
+    "start":   "node backend/server.js",
+    "dev":     "node --watch backend/server.js",
+    "server":  "node backend/server.js"
+  },
+  "author": "Prince Kumar <rajprincekumar99550@gmail.com>",
+  "license": "MIT",
+  "keywords": ["portfolio", "fullstack", "nodejs", "rest-api"],
+  "engines": { "node": ">=16" }
+}
