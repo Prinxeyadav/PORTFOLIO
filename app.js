@@ -18,7 +18,7 @@ async function apiFetch(endpoint) {
 }
 
 /* ─── LOADER ─────────────────────────────────── */
-async function runLoader() {
+ {
   const bar    = $('loaderBar');
   const status = $('loaderStatus');
   const steps  = [
