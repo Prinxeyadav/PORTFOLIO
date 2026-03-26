@@ -7,18 +7,7 @@
 ## 🗂 Project Structure
 
 ```
-portfolio/
-├── backend/
-│   └── server.js          ← Node.js HTTP server (REST API)
-├── frontend/
-│   └── public/
-│       ├── index.html     ← Main portfolio page
-│       ├── css/
-│       │   └── style.css  ← Iron Man themed styles
-│       └── js/
-│           └── app.js     ← Frontend JS (API calls + animations)
-├── package.json
-└── README.md
+
 ```
 
 ---
