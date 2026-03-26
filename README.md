@@ -1,5 +1,8 @@
 # 🦾 PRINCE KUMAR — FULL STACK PORTFOLIO
 
+#  I think i should delete this portfolio from my repo cause i am not spending timne on it ;
+
+
 > Iron Man themed personal portfolio with a real **Node.js REST API backend** + animated frontend.
 
 ---
